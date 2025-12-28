@@ -41,20 +41,20 @@ ARTIFACT_SETS = {
     15037: "Fragment of Harmonic Whimsy",
 }
 
-# Weapon ID to Name mapping (from UID 657846809)
+# Weapon ID to Name mapping (from UID 657846809) - Verified from WeaponExcelConfigData.json
 WEAPON_NAMES = {
-    11401: "Favonius Sword",
-    11403: "Sacrificial Sword",
-    11422: "Lion's Roar",
-    11424: "The Flute",
-    11426: "Iron Sting",
-    13303: "Sacrificial Greatsword",
-    13501: "Staff of Homa",
-    14403: "Favonius Lance",
-    14406: "The Catch",
-    14424: "Deathmatch",
-    15401: "Favonius Codex",
-    15409: "The Widsith",
+    11401: "Favonius Sword",        # Sword_Zephyrus
+    11403: "Sacrificial Sword",     # Sword_Fossil
+    11422: "Lion's Roar",           # Sword_Kasabouzu
+    11424: "The Flute",             # Sword_Boreas
+    11426: "Iron Sting",            # Sword_Machination
+    13303: "Sacrificial Lance",     # Pole_Noire (WEAPON_POLE, not greatsword!)
+    13501: "Staff of Homa",         # Pole_Homa
+    14403: "Sacrificial Fragments", # Catalyst_Fossil (not Favonius Lance!)
+    14406: "Prototype Amber",       # Catalyst_Proto (not The Catch!)
+    14424: "The Widsith",           # Catalyst_Yue (was incorrectly on 15409!)
+    15401: "Favonius Warbow",       # Bow_Zephyrus (not Codex!)
+    15409: "The Viridescent Hunt",  # Bow_Viridescent (not Widsith!)
 }
 
 # Fight Prop numeric keys to readable names

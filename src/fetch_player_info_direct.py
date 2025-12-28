@@ -9,7 +9,7 @@ import asyncio
 import aiohttp
 from typing import Optional, List, Dict, Any, Union
 from pydantic import BaseModel, Field
-from .id_translations import (
+from id_translations import (
     get_character_name,
     get_artifact_set_name,
     get_fight_prop_name,
