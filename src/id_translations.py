@@ -3,42 +3,58 @@ ID to name translation mappings for Genshin Impact data.
 
 This module provides mappings for translating numeric IDs to human-readable names.
 Note: These are static mappings and may need updates as new content is added.
+
+TODO: Find a way to hit the online json files rather than manually downloading them. (latter needs manual updating)
 """
 
-# Character ID to Name mapping (common characters)
+# Character ID to Name mapping (from UID 657846809) - Verified from characters.json
 CHARACTER_NAMES = {
-    10000046: "Hu Tao",
-    10000060: "Yelan",
     10000025: "Xingqiu",
     10000030: "Zhongli",
-    10000089: "Navia",
-    10000087: "Furina",
-    10000047: "Nahida",
-    10000082: "Neuvillette",
-    10000073: "Baizhu",
-    10000103: "Chiori",
-    10000031: "Keqing",
-    10000123: "Arlecchino",
-    # Add more as needed
+    10000031: "Fischl",
+    10000046: "Hutao",  # Updated to match data file
+    10000047: "Kazuha",  # Updated to match data file
+    10000060: "Yelan",
+    10000073: "Nahida",  # Fixed: was incorrectly "Baizhu"
+    10000082: "Baizhu",  # Fixed: was incorrectly "Neuvillette" (file shows "Baizhuer")
+    10000087: "Neuvillette",  # Fixed: was incorrectly "Furina"
+    10000089: "Furina",  # Fixed: was incorrectly "Navia"
+    10000103: "Xilonen",  # Fixed: was incorrectly "Chiori"
+    10000123: "Durin",  # Fixed: was incorrectly "Arlecchino"
 }
 
-# Artifact Set ID to Name mapping
+# Artifact Set ID to Name mapping (from UID 657846809)
 ARTIFACT_SETS = {
-    15006: "Crimson Witch of Flames",
-    15020: "Heart of Depth",
-    15032: "Golden Troupe",
     15001: "Gladiator's Finale",
-    15017: "Tenacity of the Millelith",
-    15019: "Pale Flame",
-    15031: "Marechaussee Hunter",
-    15025: "Vourukasha's Glow",
-    15028: "Song of Days Past",
-    15026: "Nighttime Whispers in the Echoing Woods",
     15002: "Deepwood Memories",
     15003: "Gilded Dreams",
+    15006: "Crimson Witch of Flames",
     15007: "Shimenawa's Reminiscence",
+    15017: "Tenacity of the Millelith",
+    15019: "Pale Flame",
+    15020: "Heart of Depth",
+    15025: "Vourukasha's Glow",
+    15026: "Nighttime Whispers in the Echoing Woods",
+    15028: "Song of Days Past",
+    15031: "Marechaussee Hunter",
+    15032: "Golden Troupe",
     15037: "Fragment of Harmonic Whimsy",
-    # Add more as needed
+}
+
+# Weapon ID to Name mapping (from UID 657846809)
+WEAPON_NAMES = {
+    11401: "Favonius Sword",
+    11403: "Sacrificial Sword",
+    11422: "Lion's Roar",
+    11424: "The Flute",
+    11426: "Iron Sting",
+    13303: "Sacrificial Greatsword",
+    13501: "Staff of Homa",
+    14403: "Favonius Lance",
+    14406: "The Catch",
+    14424: "Deathmatch",
+    15401: "Favonius Codex",
+    15409: "The Widsith",
 }
 
 # Fight Prop numeric keys to readable names
@@ -142,6 +158,11 @@ def get_main_prop_name(prop_id: int) -> str:
     if prop_id in ELEMENTAL_DMG_BONUS:
         return ELEMENTAL_DMG_BONUS[prop_id]
     return MAIN_PROP_NAMES.get(prop_id, f"Prop {prop_id}")
+
+
+def get_weapon_name(weapon_id: int) -> str:
+    """Get weapon name from weapon ID."""
+    return WEAPON_NAMES.get(weapon_id, f"Weapon {weapon_id}")
 
 
 def get_stat_name(stat_id: str) -> str:

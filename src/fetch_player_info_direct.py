@@ -14,7 +14,8 @@ from .id_translations import (
     get_artifact_set_name,
     get_fight_prop_name,
     get_main_prop_name,
-    get_stat_name
+    get_stat_name,
+    get_weapon_name
 )
 
 
@@ -249,8 +250,9 @@ def display_character_info(data: EnkaNetworkResponse):
                 # Weapon
                 flat = equip.flat
                 if isinstance(flat, WeaponFlat):
+                    weapon_name = get_weapon_name(equip.itemId)
                     refinement = max(equip.weapon.affixMap.values()) + 1 if equip.weapon.affixMap else 1
-                    print(f"    Weapon: Level {equip.weapon.level}, Refinement R{refinement}")
+                    print(f"    {weapon_name}: Level {equip.weapon.level}, Refinement R{refinement}")
                     for stat in flat.weaponStats:
                         stat_name = get_stat_name(stat.appendPropId)
                         # Format stat value
